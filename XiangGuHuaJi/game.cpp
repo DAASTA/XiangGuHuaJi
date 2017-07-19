@@ -353,8 +353,8 @@ bool Game::MilitaryPhase(vector<vector<TMilitaryCommand> > & MilitaryCommandList
             TPosition p = q.front();
             q.pop();
             for (size_t i=0; i<4; ++i) {
-                int x = p.x + dx[i]; 
-                int y = p.y + dy[i]; 
+                TMap x = p.x + dx[i];
+                TMap y = p.y + dy[i];
                 if (!map.isPosValid(x,y)) continue;
                 if (my_map[x][y] == NEW_POSITION) {
                     TPosition pp = {x,y};
@@ -435,8 +435,8 @@ bool Game::MilitaryPhase(vector<vector<TMilitaryCommand> > & MilitaryCommandList
                 TPosition p = q.front();
                 q.pop();
                 for (size_t i=0; i<4; ++i) {
-                    int x = p.x + dx[i]; 
-                    int y = p.y + dy[i]; 
+                    TMap x = p.x + dx[i];
+                    TMap y = p.y + dy[i];
                     if (!map.isPosValid(x,y)) continue;
                     if (my_map[x][y] == NEW_POSITION) {
                         TPosition pp = {x,y};

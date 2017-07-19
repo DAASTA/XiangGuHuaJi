@@ -7,6 +7,22 @@
 #include <ctime>
 #include"player.h"
 
+#ifndef WIN32
+// Implement GetTickCount() for *nix systems
+
+#include <sys/time.h>
+
+unsigned GetTickCount()
+{
+    struct timeval tv;
+    if(gettimeofday(&tv, NULL) != 0)
+        return 0;
+
+    return (tv.tv_sec * 1000) + (tv.tv_usec / 1000);
+}
+
+#endif
+
 namespace XGHJ {
 
 Player::Player()
